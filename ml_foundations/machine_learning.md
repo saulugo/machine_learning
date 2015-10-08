@@ -18,10 +18,10 @@ In a regression model the X variable that is plotted in the X axis is called the
 And Y is the observation or the dependent variable 
 
 ##Linear Regression Model
-<img src="./img/ml_001.png">
+<img src="./img/ml_001.jpg">
 
 Adding a higher order effects
 
 For example using a quadratic function
-<img src="./img/ml_002.png">
+<img src="./img/ml_002.jpg">
 
