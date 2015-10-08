@@ -25,3 +25,32 @@ Adding a higher order effects
 For example using a quadratic function
 <img src="./img/ml_002.jpg">
 
+How to choose the model order/complexity
+
+- Simulate predictions
+	1) Remove some houses from the data we have
+	2) Fit model on remaining
+	3) Predict heldout houses
+	
+<img src="./img/ml_003.jpg">
+
+Houses that we use to fit our model, we call it the training set
+Houses that we use as a proxy for a prediction, those that we hold out, we call that the test set
+
+<img src="./img/ml_004.jpg">
+
+So, the training error is the RSS of the training dataset
+
+So, we look at the parameters or features that minimize our training error
+
+<img src="./img/ml_005.jpg">
+
+The test error is the RSS for the observations that are in our test dataset
+<img src="./img/ml_006.jpg">
+As we increase the order of the model the training error tents to decrease and approximate to zero. However, at some point the predictions will be poor even if the training error is very small.
+
+When we apply our model to the test dataset, and as we increase the order of the model, the test error will decrease improving the quality of the prediction. However at some point or at some model order, the test error will start to increase, deteriorating the quality of the prediction.
+
+##Machine Learning - Regression Model Blocks Diagram
+<img src="./img/ml_007.jpg">
+
