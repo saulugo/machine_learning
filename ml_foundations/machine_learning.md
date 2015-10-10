@@ -3,7 +3,7 @@
 #Abstract
 My notes during the Machine Learning Foundation class at coursera.org
 
-#Week 1 and 2
+#Week 1 and 2: Regression Model: Predicting House Prices
 
 #Regression Models
 The idea is that we have an observation value that is associated to a set of features, so we want to model how our observation value varies when we change the values of the features.
@@ -53,4 +53,55 @@ When we apply our model to the test dataset, and as we increase the order of the
 
 ##Machine Learning - Regression Model Blocks Diagram
 <img src="./img/ml_007.jpg">
+
+#Week 3: Classification: Analyzing Sentiment
+
+##What makes good a classification system?
+
+- Is there class imbalance?
+- How does it compare to a simple baseline approach?
+	- Random guessing
+	- Majority class
+- Most importantly:
+	- What is good enough for my user experience?
+	- What is the impact of the mistake we make?
+	
+##Types of mistakes in a classification system
+
+###The Confusion Matrix
+
+- True label is + and the predicted label is + = **True Pasitive**
+- True label is + and the predicted label is - = **False Negative**
+- True label is - and the predicted label is + = **False Positive**
+- True label is - and the predicted label is - = **True Negative**
+
+##The Learning Curve
+
+<img src="./img/ml_008.png">
+
+The more data (good quality data) we have for the training model, the smaller the test error should be. However the test error will never be zero.
+
+To this fact that the test error will never be zero, we call it: **Bias of model**
+
+##Class Probability
+In most cases, instead of only predict if an observation belongs to a certain class, we are going to assign a **probability** that the observation belongs to a certain class.
+
+We use the following notation:
+
+	P(Y|X) **Probability of Y given X
+
+For example. In a sentiment sentences classification system:
+
+- The food was **awful** 	P(Y = - | X) = 0.99 (99%)
+- The food was **OK**    	P(Y = - | X) = 0.54 (54%)
+
+In the example, Y is the predicted label (positive or negative), and X is the sentences and its parameters, in this case, the only parameter is the word "awful" or "OK"
+
+So, when we assign probabilities to classes, we must train our system and decide which probability boundary makes the prediction good enough.
+
+##Block Diagram of a Classification System
+
+The same way we built a Block Diagram for a Regression Model, we can built a similar one of a Classification System:
+
+<img src="./img/ml_009.png">
 
