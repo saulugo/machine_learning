@@ -130,4 +130,87 @@ of the sum of the power of two of the words instances:
 
 <img src="./img/ml_012.png">
 
+####Prioritizing important words with tf-idf
+
+Other issue we want to address, is to emphasize important or relevant words for the matter that we are
+trying to collect from the articles.
+
+So, we have **common words** like: the, player, field, etc...
+
+And **rare words** like: futbol, Messi, etc... (in this example we are looking for futbol articles.
+
+- Rare words:
+	- Appear infrequently in the corpus (the corpus is the general language)
+
+###TF-IDF Document Representation
+
+**TF-IDF:** stands for Term Frequency - Inverse Document Frequency
+
+- **Term Frequency:** we count the how frequent is the word in the document we are reading.
+- **Inverse Document Frequency:** we calculate a number (or the log of a number) that is lower
+the more common is the word in all the documents in the corpus and is higher the more rare is 
+the word and infrequent in all the documents in the corpus.
+
+<img src="./img/ml_013.png">
+
+So, as shown in the following picture, what we do is to multiply the **TF** vector by the **IDF** 
+vector and the resulting vector is the one we will use to classify the document. In this resulting
+document the more common words will be scored lower and the more rare words will be scored higher.
+
+<img src="./img/ml_014.png">
+
+##Clustering and Documents Retrieval
+
+As we can measure the similarity between two documents, one way to find a document that could be
+of the interest of the reader, is to loop through all the documents in the corpus and compute the
+similarity between each document and the document we are reading at the moment. Then, select as
+the next document the one with the highest similarity score.
+
+The other way to classify documents as per their similarity is using **Clustering**.
+
+###Multiclass Classification Problem
+
+When we have the case in which we, somehow, know the classification label of each document in the
+corpus and we want to decided to which class we should assign the document we are reading, we
+say that we have a **Multiclass Classification Problem.**
+
+<img src="./img/ml_015.png">
+
+When we know before hand the labels of each class for all the documents in the corpus, we say that
+we have a **Supervised Learning Task**.
+
+When we don't have before hand the labels for the document classes, we say we have an **Unsupervised
+Learning Task**.
+
+In this case, we can use **Clustering**:
+
+- No labels provided
+- Want to uncover the cluster structure
+
+- **Inputs:** docs as vectors
+- **Output:** cluster labels
+
+###What Defines a Cluster?
+
+- Cluster are defined by the center and the shape and spread of it.
+
+- Assign an observation (document) to cluster (topic label)
+	- Score under cluster is higher than others
+	- Often, just more similar to assigned cluster center than other cluster centers
+	
+<img src="./img/ml_016.png">
+
+ ###K-means Clusters
+ 
+1) We initialized the cluster centers, for example, we can initially choose random centers
+2) We assign the observations to these initial cluster centers
+3) We calculate the new clusters center of mass
+4) We re-assign the observations to the clusters using the new centers
+5) We iterate the process until converge
+
+<img src="./img/ml_017.png">
+
+
+
+<img src="./img/ml_016.png">
 
