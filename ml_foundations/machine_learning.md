@@ -105,3 +105,29 @@ The same way we built a Block Diagram for a Regression Model, we can built a sim
 
 <img src="./img/ml_009.png">
 
+#Week 4: Clustering and Similarity: Retrieving Documents
+
+##Word count document representation
+
+###Bag of words model
+
+- Ignore the order of words
+- Count # of instances of each word in vocabulary
+
+This method counts the number of times each word in the vocabulary appears in the text of the document.
+Then, to compare one document to another, it multiplies each amount of each word in the vocabulary between
+documents and sums the total. The more similar are both documents the higher is the total sum.
+
+<img src="./img/ml_010.png">
+
+####Issues of the bag of words model
+The main issue with this model, is that if we double the length of the documents we are comparing, the 
+sum of the words instances will be much higher, so we can wrongly conclude that the documents are more
+similar than in the case of shorter documents, even though they are still of the same "similarity".
+
+To address this issue, we take the normalized version of the words count vector, taking the root square
+of the sum of the power of two of the words instances:
+
+<img src="./img/ml_012.png">
+
+
